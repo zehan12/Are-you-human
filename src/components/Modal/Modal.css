@@ -22,7 +22,7 @@
 
 .modal-content {
     background-color: white;
-    height: 500px;
+    height: 570px;
     width: 400px;
     padding: 10px;
     border: 1px solid black;
@@ -43,6 +43,7 @@
 .btn-c {
     display: flex;
     justify-content: flex-end;
+    margin-top: 13px;
 }
 
 .verify {
@@ -57,4 +58,17 @@
     width: 100px;
     margin: 2px;
 
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 6px;
+    justify-content: center;
+}
+
+.img-grid {
+    margin: 2px;
+    height: 120px;
+    width: 120px;
 }

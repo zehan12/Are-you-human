@@ -5,9 +5,13 @@ import Modal from './components/Modal/Modal';
 
 function App() {
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [isHuman, setIsHuman] = useState(false);
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
+
+  const [ selected, setSelected ] = useState([]);
 
   const Loader = () => {
     return (
@@ -18,14 +22,24 @@ function App() {
     )
   }
 
+  const handleSubmit = (e ) => {
+    e.preventDefault()
+    console.log(email, password)
+    if ( email.trim().length === 0 ) console.log("enter value ")
+    if ( password.trim().length === 0 ) console.loc("enter password")
+    if ( !isHuman ) console.log("first verify")
+    
+  }
+
+
   const handleClick = () => {
     setLoading(true);
 
-    setShowModal(true)
     setTimeout(() => {
-      setIsHuman(true)
+      // setIsHuman(true)
+      setShowModal(true)
       setLoading(false)
-    }, 5000);
+    }, 2000);
   }
 
   const handleModal = () => {
@@ -40,10 +54,10 @@ function App() {
 
       <h1>Login Form</h1>
       <label>email</label>
-      <input type="text" />
+      <input onChange={(e)=>setEmail(e.target.value)} value={email} type="text" />
       <br />
       <label>Password</label>
-      <input type="password" />
+      <input onChange={(e)=>setPassword(e.target.value)} value={password} type="password" />
       <div>
         <p>Are you a human ?</p>
       </div>
@@ -74,7 +88,7 @@ function App() {
 
       </div>
 
-      <button>Submit</button>
+      <button onClick={(e)=>handleSubmit()} >Submit</button>
 
     </div>
   );

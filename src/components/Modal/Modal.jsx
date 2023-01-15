@@ -1,43 +1,34 @@
-import { Fragment } from "react";
-import "./Modal.css"
+import { Fragment, useState } from "react";
+import "./Modal.css";
+import puzzelImage from "../../data/images";
 
 const Modal = ({
     handleClose,
     show
 }) => {
 
-    const puzzelImage = [
-        {
-            name: "Cars",
-            images: [
-                {
-                    is: true,
-                    image: ""
-                },
-                {
-                    is: false,
-                    image: ""
-                },
-                {
-                    is: true,
-                },
-                {
-                    is: true,
-                    image: ""
-                },
-                {
-                    is:false,
-                    image:""
-                },
-                {
-                    is:false,
-                    image:""
-                }
-            ]
-        }
-    ]
+    const [tick, setTick] = useState([])
 
-    console.log(puzzelImage[0])
+    const handleTick = (id) => {
+        if (tick.includes(id)) {
+            setTick(tick.filter(i => i !== id));
+        } else {
+            setTick([...tick, id]);
+        }
+    }
+
+    const handleVerfiy = () => {
+        let actualArr = puzzelImage.reduce((acc, cv) => acc += cv.verified ? 1 : 0, 0)
+        let count = 0;
+
+        for (let i = 0; i < tick.length; i++) {
+            if (puzzelImage[tick[+i]].verified) {
+                console.log(puzzelImage[tick[+i]])
+                count += 1;
+            }
+        }
+    }
+
 
     return (
         <Fragment>
@@ -50,16 +41,20 @@ const Modal = ({
                             <div className="top-box">
                                 <div>
                                     <p>Select all Squares with</p>
-                                    <h3>Bridge</h3>
-                                    <p>if There are none then move foreward</p>
+                                    <h3>Cross Walk</h3>
+                                    <p>Click verify once there are none left</p>
                                 </div>
-
                             </div>
-                            <div>
-
+                            <div className="grid">
+                                {
+                                    puzzelImage.map((v) =>
+                                        <div key={v.id} onClick={() => handleTick(v.id)} >
+                                            <img className="img-grid" style={{ border: tick.includes(v.id) ? "4px solid rgb(74,144,226)" : "4px solid white" }} src={v.image} alt={v.id} />
+                                        </div>)
+                                }
                             </div>
                             <div className="btn-c">
-                                <button className="verify">
+                                <button onClick={handleVerfiy} className="verify">
                                     verify
                                 </button>
                             </div>
