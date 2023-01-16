@@ -3,22 +3,22 @@ const puzzelImage = [
     {
         id: "1",
         verified: true,
-        image: "https://images.unsplash.com/photo-1602057032325-a88abc5e2682?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80"
+        image: "https://i.postimg.cc/5tJxLb63/crosswalk-featured-1200x900.jpg"
     },
     {
         id: "2",
         verified: false,
-        image: "https://media.istockphoto.com/id/1319270783/photo/new-homes-on-a-quiet-street-in-raleigh-nc.jpg?s=1024x1024&w=verified&k=20&c=SxI9vfygJ-WMOTMZeLfOlC3-k7OXOzK-_aXIUSkXBHg="
+        image: "https://i.postimg.cc/6QCmqm7D/this-is-why-the-white-house-is-white-119809810-Orhan-Cam-ft.jpg"
     },
     {
         id: "3",
         verified: true,
-        image: "https://media.istockphoto.com/id/1370713218/photo/cropped-shot-of-an-unrecognisable-man-walking-through-the-city-in-the-morning.jpg?s=1024x1024&w=verified&k=20&c=fAhUIh_HFfsLD8use35-9qTGzXQLAfcyxrjO04hW394="
+        image: "https://i.postimg.cc/YStHjRsD/istockphoto-1181241726-170667a.jpg"
     },
     {
         id: "4",
         verified: true,
-        image: "https://media.istockphoto.com/id/1207301957/photo/attractive-young-woman-walking-down-the-street.jpg?s=1024x1024&w=verified&k=20&c=4yUQ9yu2Ips3i5Uk8WEY_XHJ_w2xl6UBHmY0Aj2MkH4="
+        image: "https://i.postimg.cc/KY51Zm5w/2-3-4-01-IMG-20190731-090136.webp"
     },
     {
         id: "5",
@@ -28,7 +28,7 @@ const puzzelImage = [
     {
         id: "6",
         verified: true,
-        image: "https://images.unsplash.com/photo-1517173091962-f788fe5b962a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+        image: "https://i.postimg.cc/FzhfF0Qj/5cdd6aca93a152768215d305.webp"
     },
     {
         id: "7",
@@ -43,7 +43,7 @@ const puzzelImage = [
     {
         id: "9",
         verified: true,
-        image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+        image: "https://i.postimg.cc/7PdxHgM0/crosswalk-collective-1-37c971c97b08a75d799cc82ca413fb7abe642324.jpg"
     }
 
 ]

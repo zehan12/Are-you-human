@@ -1,6 +1,8 @@
 import { Fragment, useState } from "react";
 import "./Modal.css";
 import puzzelImage from "../../data/images";
+import toast from 'react-hot-toast';
+
 
 const Modal = ({
     handleClose,
@@ -8,27 +10,38 @@ const Modal = ({
 }) => {
 
     const [tick, setTick] = useState([])
-
     const handleTick = (id) => {
         if (tick.includes(id)) {
-            setTick(tick.filter(i => i !== id));
+            setTick(tick.filter((i) => i !== id));
         } else {
             setTick([...tick, id]);
         }
-    }
+    };
 
-    const handleVerfiy = () => {
-        let actualArr = puzzelImage.reduce((acc, cv) => acc += cv.verified ? 1 : 0, 0)
-        let count = 0;
-
-        for (let i = 0; i < tick.length; i++) {
-            if (puzzelImage[tick[+i]].verified) {
-                console.log(puzzelImage[tick[+i]])
-                count += 1;
+    const handleVerify = () => {
+        let trueCount = 0;
+        for (let i = 0; i < puzzelImage.length; i++) {
+            trueCount += puzzelImage[i].verified ? 1 : 0;
+        }
+        if (tick.length !== trueCount) {
+            toast.error("Incorrect captcha. Please try again.");
+        } else {
+            let isCorrect = true;
+            for (let i = 0; i < tick.length; i++) {
+                if (!puzzelImage[tick[i] - 1].verified) {
+                    isCorrect = false;
+                    break;
+                }
+            }
+            if (isCorrect) {
+                toast.success("Captcha is correct. User verified.")
+            } else {
+                toast.error("Incorrect captcha. Please try again.")
             }
         }
-    }
+    };
 
+    console.log(tick, "every")
 
     return (
         <Fragment>
@@ -54,7 +67,7 @@ const Modal = ({
                                 }
                             </div>
                             <div className="btn-c">
-                                <button onClick={handleVerfiy} className="verify">
+                                <button onClick={handleVerify} className="verify">
                                     verify
                                 </button>
                             </div>
