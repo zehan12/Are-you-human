@@ -37,6 +37,7 @@ const Modal = ({
                 toast.success("Captcha is correct. User verified.")
             } else {
                 toast.error("Incorrect captcha. Please try again.")
+                
             }
         }
     };
